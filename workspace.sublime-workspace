@@ -1,0 +1,713 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"csv",
+				"csvUrl"
+			],
+			[
+				"report",
+				"reportData"
+			],
+			[
+				"table-",
+				"table-cell"
+			],
+			[
+				"border-r",
+				"border-radius"
+			],
+			[
+				"taskheade",
+				"taskHeaderLine"
+			],
+			[
+				"taskHe",
+				"taskHeader"
+			],
+			[
+				"taskHeader",
+				"taskHeaderLine"
+			],
+			[
+				"FOREGROUND",
+				"FOREGROUND_INTENSITY"
+			],
+			[
+				"constru",
+				"construct"
+			],
+			[
+				"extn",
+				"extension"
+			],
+			[
+				"categ",
+				"categories"
+			],
+			[
+				"_",
+				"_productCollection"
+			],
+			[
+				"_prod",
+				"_productCollection"
+			],
+			[
+				"_produ",
+				"_productArr"
+			],
+			[
+				"addAttr",
+				"addAttributeToSort"
+			],
+			[
+				"sign_up",
+				"sign_up_form"
+			],
+			[
+				"hidde",
+				"hiddenElements"
+			],
+			[
+				"_console",
+				"_consoleProto"
+			],
+			[
+				"browser",
+				"browserAction"
+			],
+			[
+				"getInjection",
+				"getInjectionEnabled"
+			],
+			[
+				"form",
+				"formType"
+			],
+			[
+				"crave-mailer",
+				"crave-mailer-admin"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 150.0,
+		"selected_items":
+		[
+			[
+				"sscss",
+				"Set Syntax: CSS"
+			],
+			[
+				"text",
+				"Set Syntax: reStructuredText"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"sscoffe",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"nasm",
+				"Set Syntax: Assembly x86 (NASM)"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ssjson",
+				"Set Syntax: JSON"
+			],
+			[
+				"sscoffee",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"ssjade",
+				"Set Syntax: Jade"
+			],
+			[
+				"sshaxe",
+				"Set Syntax: Haxe"
+			],
+			[
+				"ssbatch",
+				"Set Syntax: Batch File"
+			],
+			[
+				"sscoff",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"removepac",
+				"Package Control: Remove Package"
+			],
+			[
+				"repos",
+				"Package Control: Add Repository"
+			],
+			[
+				"sshtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"html",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"ssjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ssjava",
+				"Set Syntax: Java"
+			],
+			[
+				"ssht",
+				"Set Syntax: HTML (Tcl)"
+			],
+			[
+				"ssc++",
+				"Set Syntax: C++"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install p",
+				"Package Control: Install Package"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"sscof",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"prop",
+				"Set Syntax: Java Properties"
+			],
+			[
+				"sslua",
+				"Set Syntax: Lua"
+			],
+			[
+				"ssphp",
+				"Set Syntax: PHP"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"sasjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"addre",
+				"Package Control: Add Repository"
+			],
+			[
+				"ssshel",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"ssjavascrip",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ssjav",
+				"Set Syntax: Java"
+			],
+			[
+				"isntall",
+				"Package Control: Install Package"
+			],
+			[
+				"obj",
+				"Set Syntax: Objective-C"
+			],
+			[
+				"sshtm",
+				"Set Syntax: HTML"
+			],
+			[
+				"javascript",
+				"Set Syntax: JavaScript"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/JDBallard/Documents/project-oqto/website/designs/assets/oqto.html",
+		"/C/Users/JDBallard/Documents/project-libuv/src/win/tty.c",
+		"/C/Users/JDBallard/Downloads/css21.g",
+		"/C/Users/JDBallard/Documents/project-alpha/Grindr Ad/index.php",
+		"/C/Users/JDBallard/Documents/project-rutgers/rutgers-client/gen_headers.bat",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp14784/www.grapplearts.com/web/content/get-to-the-top-video/index2.php",
+		"/C/chromium/test.sh",
+		"/C/Users/JDBallard/Documents/project-rutgers/filenames-needed.txt",
+		"/C/Users/JDBallard/Documents/project-nasm/build.bat",
+		"/C/Users/JDBallard/Documents/project-nasm/HelloWorld.asm",
+		"/C/Users/JDBallard/Documents/project-nodejs/deps/uv/src/win/tty.c",
+		"/C/Users/JDBallard/Documents/project-odesk-scraper/server/odesk-scraper.coffee",
+		"/C/Users/JDBallard/Documents/project-odesk-scraper/server/package.json",
+		"/C/Users/JDBallard/Documents/project-odesk-scraper/server/.gitignore",
+		"/C/Users/JDBallard/Documents/project-odesk-scraper/server/lib/odesk-scraper.coffee",
+		"/C/Users/JDBallard/Documents/project-odesk-scraper/server/lib/api.coffee",
+		"/C/Users/JDBallard/Documents/project-odesk-scraper/server/pl_filter.js",
+		"/C/Users/JDBallard/Documents/project-odesk-scraper/server/lib/notifier.coffee",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp19480/www.grapplearts.com/web/content/get-to-the-top-video/index.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp10513/www.grapplearts.com/web/content/get-to-the-top-video/index2.php",
+		"/C/Users/JDBallard/Documents/project-odesk-scraper/server/conf/scraper.json",
+		"/C/Users/JDBallard/Documents/project-alpha/Grindr Ad/stylesheet.css",
+		"/C/Users/JDBallard/Documents/project-odesk-scraper/server/out.txt",
+		"/C/Users/JDBallard/Documents/project-donut-tees/template/index.jade",
+		"/C/Users/JDBallard/Documents/project-donut-tees/lib/core/db.coffee",
+		"/C/Users/JDBallard/Documents/project-donut-tees/lib/core/rewrite.coffee",
+		"/C/Users/JDBallard/Documents/project-donut-tees/lib/core/args.coffee",
+		"/C/Users/JDBallard/Documents/project-donut-tees/lib/core/helper.coffee",
+		"/C/Users/JDBallard/Documents/project-donut-tees/donut.coffee",
+		"/C/Users/JDBallard/Documents/project-donut-tees/lib/donut-server.coffee",
+		"/C/Users/JDBallard/Documents/project-donut-tees/lib/helper/ttdb.coffee",
+		"/C/Users/JDBallard/Documents/project-donut-tees/conf/db.json",
+		"/C/Users/JDBallard/Documents/project-donut-tees/.gitignore",
+		"/C/Users/JDBallard/Documents/project-donut-tees/package.json",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp34480/usr/local/apache/htdocs/app/design/adminhtml/default/default/template/skureport/reportGenerated.phtml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp30394/usr/local/apache/htdocs/app/code/local/GL/SKUReport/controllers/Adminhtml/SkureportController.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp33904/usr/local/apache/htdocs/app/code/local/GL/SKUReport/Block/SkureportGenerate.php",
+		"/C/Users/JDBallard/Documents/project-goallaunch/skureport/skureport.css",
+		"/C/Users/JDBallard/Downloads/goallaunch-skureport.csv",
+		"/C/Users/JDBallard/Documents/project-goallaunch/skureport/Goal Launch   Magento Admin.htm",
+		"/C/Users/JDBallard/Documents/project-goallaunch/skureport.css",
+		"/C/Users/JDBallard/Documents/project-octo-deux/lib/octo/octo.coffee",
+		"/C/Users/JDBallard/Documents/project-octo-deux/octo-sl.coffee",
+		"/C/Users/JDBallard/Documents/test.ans",
+		"/C/Users/JDBallard/Documents/project-octo-deux/lib/octo/core/console.coffee",
+		"/C/Users/JDBallard/Documents/project-octo-deux-test-console.coffee",
+		"/C/Users/JDBallard/Documents/project-octo-example-output.txt",
+		"/C/Users/JDBallard/Documents/project-nodejs/deps/uv/src/unix/tty.c",
+		"/C/Users/JDBallard/init.cmd",
+		"/C/Users/JDBallard/as_bootstrap.cmd",
+		"/C/Users/JDBallard/as_shell.sh",
+		"/C/Program Files (x86)/nodejs/npm",
+		"/C/Users/JDBallard/Documents/project-octo-deux/lib/octo/util/objects.coffee",
+		"/C/Users/JDBallard/cake.txt",
+		"/C/Users/JDBallard/Documents/project-octo-deux/lib/octo-make/util/util-objects.coffee",
+		"/C/Users/JDBallard/Documents/project-octo-deux/lib/octo-make/octo.coffee",
+		"/C/Users/JDBallard/Documents/project-octo-deux/lib/octo-make/octo-util.coffee",
+		"/C/Users/JDBallard/Documents/project-octo-deux/.gitignore",
+		"/C/Users/JDBallard/Documents/project-octo/package.json",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp38766/usr/local/apache/htdocs/app/code/local/GL/SKUReport/Block/SkureportGenerate.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp38429/usr/local/apache/htdocs/app/code/local/GL/SKUReport/controllers/Adminhtml/SkureportController.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp38342/usr/local/apache/htdocs/app/design/adminhtml/default/default/template/skureport/reportGenerated.phtml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp39309/usr/local/apache/htdocs/app/design/adminhtml/default/default/template/skureport/report.phtml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp38134/usr/local/apache/htdocs/app/code/local/GL/SKUReport/Block/Skureport.php",
+		"/C/Users/JDBallard/Documents/project-svg/test.html",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp55318/usr/local/apache/htdocs/app/design/frontend/base/default/template/contacts/form.phtml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp29107/usr/local/apache/htdocs/app/design/frontend/base/default/template/catalog/product/view.phtml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp22485/usr/local/apache/htdocs/app/code/local/GL/SKUReport/Block/Skureport.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp34631/usr/local/apache/htdocs/app/code/local/GL/SKUReport/etc/adminhtml.xml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp34165/usr/local/apache/htdocs/app/code/local/GL/SKUReport/controllers/Adminhtml/SkureportController.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp55235/usr/local/apache/htdocs/app/design/adminhtml/default/default/template/skureport/report.phtml",
+		"/C/Users/JDBallard/Documents/pl-offer-letter.html",
+		"/C/Users/JDBallard/Documents/PL Offer Letter.pdf",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp23131/www.grapplearts.com/web/content/css/vimeo_fix.css",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp29361/www.grapplearts.com/web/content/Blog/wp-includes/post-template.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp22460/www.grapplearts.com/web/content/Blog/wp-content/themes/creator/languages/creator.po",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp42714/www.grapplearts.com/web/content/js/vimeo_fix.js",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp35926/usr/local/apache/htdocs/app/code/local/GL/SKUReport/etc/config.xml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp19649/usr/local/apache/htdocs/app/design/adminhtml/default/default/layout/report.xml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp53933/usr/local/apache/htdocs/app/code/local/GL/SKUReport/Block/SkureportBlock.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp56634/usr/local/apache/htdocs/app/code/local/GL/SKUReport/etc/config.xml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp12116/usr/local/apache/htdocs/app/design/adminhtml/default/default/layout/catalog.xml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp06359/usr/local/apache/htdocs/app/design/adminhtml/default/default/layout/skureport.xml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp30841/usr/local/apache/htdocs/app/code/local/GL/SKUReport/etc/adminhtml.xml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp40405/usr/local/apache/htdocs/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp00243/usr/local/apache/htdocs/app/design/adminhtml/default/default/layout/admin.xml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp35502/usr/local/apache/htdocs/app/code/local/GL/SKUReport/Helper/Data.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp54962/usr/local/apache/htdocs/app/code/local/GL/SKUReport/Helper/Data.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp50998/usr/local/apache/htdocs/app/code/local/GL/SKUReport/etc/adminhtml.xml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp41781/usr/local/apache/htdocs/app/etc/modules/GL_SKUReport.xml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp08661/usr/local/apache/htdocs/app/code/local/GL/SKUReport/controllers/Adminhtml/SkuController.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp07214/usr/local/apache/htdocs/app/code/local/GL/SKUReport/controllers/Adminhtml/SKUReportController.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp21332/usr/local/apache/htdocs/app/code/local/GL/SKUReport/controllers/SKUReportController.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp35911/usr/local/apache/htdocs/app/code/community/Auctane/Api/controllers/AuctaneController.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp37935/usr/local/apache/htdocs/app/code/core/Mage/Newsletter/controllers/ManageController.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp36543/usr/local/apache/htdocs/app/code/core/Mage/Catalog/controllers/CategoryController.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp28351/usr/local/apache/htdocs/app/code/local/GL/SKUReport/controllers/SkureportController.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp55931/usr/local/apache/htdocs/app/etc/modules/GL_SKUReport.xml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp55165/usr/local/apache/htdocs/app/etc/modules/IWD_All.xml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp35166/usr/local/apache/htdocs/app/code/local/GL/SKUReport/Helper/Data.php",
+		"/C/Users/JDBallard/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/WorkDot/design/test/Test.jhtml",
+		"/C/Users/JDBallard/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/WorkDot/etc/conf/template/template.json",
+		"/C/Users/JDBallard/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/WorkDot/etc/conf/workdot/.json",
+		"/C/Users/JDBallard/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/WorkDot/etc/conf/workdot.json",
+		"/C/Users/JDBallard/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/WorkDot/design/test/test.jhtml",
+		"/C/Users/JDBallard/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/WorkDot/var/cache/template/test/test.java",
+		"/C/Users/JDBallard/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/WorkDot/etc/conf/template/template.json.json",
+		"/C/Users/JDBallard/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/WorkDot/var/cache/template/test.jhtml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp09155/usr/local/apache/htdocs/app/code/core/Mage/Catalog/Block/Product/List.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp58985/usr/local/apache/htdocs/app/code/local/GL/ReportTab/Block/Adminhtml/Catalog/Product/Tab.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp05553/usr/local/apache/htdocs/app/design/adminhtml/default/default/template/reporttab/catalog/product/tab.phtml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp08515/usr/local/apache/htdocs/app/code/core/Mage/Catalog/Block/Product/View.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp07596/usr/local/apache/htdocs/app/design/frontend/goallaunch/default/template/catalog/product/list.phtml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp07956/usr/local/apache/htdocs/app/design/frontend/goallaunch/default/template/page/html/header.phtml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp53367/usr/local/apache/htdocs/app/etc/modules/GL_ReportTab.xml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp55542/usr/local/apache/htdocs/app/code/local/GL/ReportTab/etc/config.xml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp02908/usr/local/apache/htdocs/app/design/adminhtml/default/default/layout/reporttab.xml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp55626/www.grapplearts.com/web/content/Blog/wp-content/themes/creator/functions.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp20152/www.grapplearts.com/web/content/js/yt-bsweeps.js",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp56602/www.grapplearts.com/web/content/Blog/wp-config.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp27514/www.grapplearts.com/web/content/SubscriptionSplitTest/BJJForm.html",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp27619/www.grapplearts.com/web/content/SubscriptionSplitTest/iframetest.html",
+		"/C/Users/JDBallard/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/WorkDot/design/test.jhtml",
+		"/C/Users/JDBallard/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/WorkDot/etc/conf/db/mongo.json",
+		"/C/Users/JDBallard/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/WorkDot/template/test.jhtml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp27260/usr/local/apache/htdocs/app/code/core/Mage/Catalog/Block/Product/List.php",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp06466/usr/local/apache/htdocs/app/design/frontend/goallaunch/default/template/page/html/header.phtml",
+		"/C/Users/JDBallard/AppData/Local/Temp/scp28844/usr/local/apache/htdocs/app/design/frontend/goallaunch/default/template/catalog/product/list.phtml"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"(\\da)$",
+			"(scene-[A-EX]\\d-[a-e]$)",
+			"(scene-[A-EX]\\d$)",
+			"q$",
+			"^[A-DX]\\d$",
+			"<<",
+			"REVERSE",
+			"}\"\n",
+			"console",
+			"\"]');\n",
+			"	\n",
+			"[\\r\\n]+",
+			"([\\&\\<\\>\\|\\'\\`\\,\\;\\=\\(\\)\\\\\\[\\]\\\"])",
+			"^",
+			"%",
+			" \n",
+			"					\n",
+			"This post is password",
+			"\"",
+			"skureport",
+			"acl",
+			"event",
+			"ga\\(",
+			"();\n",
+			"9",
+			"{\n",
+			"_product",
+			"Mage_Eav_Model_Entity_Collection_Abstract",
+			"				\n",
+			"		\n",
+			"([^=]+)=([^&]+)&",
+			"([^=]+)=((?!$|&).+)",
+			"\\]:",
+			"^\\s+",
+			" 40px",
+			"40px",
+			"center 25px",
+			"\\$([^A-Za-z])",
+			"\\$",
+			"hook",
+			"undefined",
+			"\\\\",
+			"{\n",
+			"();\n",
+			"$\n",
+			"this",
+			"[\\r\\n]+",
+			"\" must be writable.",
+			"magerp",
+			"/",
+			"#       new file:   ",
+			"qty",
+			"[\\s\\r\\n]",
+			"[cC]aptionova",
+			"end_date",
+			"update",
+			"<form",
+			"end date",
+			"camp_end_date",
+			"Campaign has ended",
+			"grey_btn",
+			"\\n\\n",
+			"\\r",
+			"\\t",
+			"^//",
+			"^\\}",
+			";",
+			"(if \\([^\\)]+\\)) return",
+			":\\(",
+			" = function (\\((?:[^\\)]+)\\))\\s*\\{",
+			"^\\s+$",
+			"^(\\/\\/[^\\r\\n]+)[\\r\\n]+",
+			"^Swing\\.([^\\s]+)",
+			"^Math\\.",
+			"\");\n",
+			"\\/home\\/goal218\\/public_html\\/",
+			"			\n",
+			"\\t",
+			"(?:^|\\s)([^,]+),",
+			"[\\r\\n]+",
+			"378.48",
+			" \n",
+			"				\n",
+			"billing",
+			");\n",
+			"						\n",
+			"DEBUG",
+			"{\n",
+			";\n",
+			"));\n",
+			"				}",
+			"callback",
+			"	\n",
+			"});",
+			"tab",
+			"\"",
+			"\\033\\[(\\d+(;|m))+",
+			".",
+			"aqua",
+			"(light|bright)",
+			"$",
+			"^- ",
+			"`([A-F0-9])[\\.`]",
+			":\\s*(([a-z]+\\.?)+)",
+			"\\.$",
+			"([a-z]+)[^\\n\\r]?",
+			"([a-z]+)[^\\n\\r]",
+			"([a-z]+)\\s*",
+			"^",
+			"^([0-9A-F])",
+			" = ",
+			"\\s{2,}",
+			"[\\r\\n+]",
+			"^\"([^\"]+)\":\\s*\"([^\"]+).+$",
+			"ype=\"text/javascript\">\n    </script>",
+			"Loader",
+			"$",
+			"^(\\s*)",
+			"^\"([^\"]+)\":\\s*\"([^\"]+)\"(?:,[\\r\\n]+|$)",
+			"function",
+			"Images/",
+			"		\n",
+			"}\n",
+			"{\n",
+			"opt_mc_api_key",
+			"URI_Of_Page_Describing_Plugin_and_Updates",
+			"mail()",
+			"setup_posted_data"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": true,
+		"regex": true,
+		"replace_history":
+		[
+			"\\1.vid",
+			"\\1.aud",
+			"\\1.vid",
+			"q.aud",
+			"",
+			"^\\1",
+			"^^",
+			"%%",
+			"'",
+			"\\\\\"",
+			"\\\"",
+			"\\1: \"\\2\",\\n",
+			"\\1: \"\\2\"",
+			"]] =",
+			"lineMap[",
+			"/",
+			" ",
+			"",
+			"\\\\",
+			"git rm --cache ",
+			"",
+			"\\n",
+			"",
+			"    ",
+			"#",
+			"",
+			"\\1\\n\\t\\treturn",
+			": (",
+			"\\1 ->",
+			"",
+			"\\1\\n",
+			"\\1:",
+			"Swing.",
+			"/var/www/goallaunch/",
+			"    ",
+			"'\\1', ",
+			", ",
+			"shipping",
+			"'",
+			"",
+			"cyan",
+			"bold",
+			",",
+			"",
+			"\"\\1\"",
+			": '\\1'",
+			"",
+			"\\1.",
+			"- ",
+			"`\\1`",
+			": ",
+			"\\n",
+			" ",
+			"\\1@\\2",
+			"' +",
+			"\\1'",
+			"\\1@\\2 ",
+			"\\1@\\2"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "workspace.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 177.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

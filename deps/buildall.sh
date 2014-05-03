@@ -60,5 +60,17 @@ cd ..
 #	I'm doing this in here because forking the repo
 #	for something small like this isn't worth it.
 cd ./skulpt
-cat skulpt.py | sed -e "s/\#jsengine/jsengine/" | sed -e "s/rhino/node/g" | python - dist -v
+cat skulpt.py | sed -e "s/\#jsengine/jsengine/" | sed -e "s/rhino/node/g" | python - dist -v || exit 1
 cd ..
+
+# PHP.js
+cd ./phpjs
+npm install || exit 1
+grunt --force || exit 1
+cd ..
+
+# Emscripten
+cd ./emscripten
+npm install || exit 1
+emmake || exit 1
+export PATH=$PATH:`pwd`

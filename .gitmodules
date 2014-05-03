@@ -7,9 +7,6 @@
 [submodule "deps/doppio"]
 	path = deps/doppio
 	url = git@github.com:plasma-umass/doppio.git
-[submodule "deps/clangjs"]
-	path = deps/clangjs
-	url = git@github.com:kripken/clang-js.git
 [submodule "deps/asmjs"]
 	path = deps/asmjs
 	url = git@github.com:dherman/asm.js.git
@@ -25,3 +22,6 @@
 [submodule "deps/ez_setup"]
 	path = deps/ez_setup
 	url = git@github.com:ActiveState/ez_setup.git
+[submodule "deps/phpjs"]
+	path = deps/phpjs
+	url = git@github.com:niklasvh/php.js.git

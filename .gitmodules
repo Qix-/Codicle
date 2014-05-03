@@ -4,9 +4,6 @@
 [submodule "deps/buzz"]
 	path = deps/buzz
 	url = git@github.com:jaysalvat/buzz.git
-[submodule "deps/pyjs"]
-	path = deps/pyjs
-	url = git@github.com:pyjs/pyjs.git
 [submodule "deps/phpjs"]
 	path = deps/phpjs
 	url = git@github.com:kvz/phpjs.git
@@ -22,3 +19,6 @@
 [submodule "deps/emscripten"]
 	path = deps/emscripten
 	url = git@github.com:kripken/emscripten.git
+[submodule "deps/skulpt"]
+	path = deps/skulpt
+	url = git@github.com:skulpt/skulpt.git

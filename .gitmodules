@@ -1,0 +1,24 @@
+[submodule "deps/ace"]
+	path = deps/ace
+	url = git@github.com:ajaxorg/ace.git
+[submodule "deps/buzz"]
+	path = deps/buzz
+	url = git@github.com:jaysalvat/buzz.git
+[submodule "deps/pyjs"]
+	path = deps/pyjs
+	url = git@github.com:pyjs/pyjs.git
+[submodule "deps/phpjs"]
+	path = deps/phpjs
+	url = git@github.com:kvz/phpjs.git
+[submodule "deps/doppio"]
+	path = deps/doppio
+	url = git@github.com:plasma-umass/doppio.git
+[submodule "deps/clangjs"]
+	path = deps/clangjs
+	url = git@github.com:kripken/clang-js.git
+[submodule "deps/asmjs"]
+	path = deps/asmjs
+	url = git@github.com:dherman/asm.js.git
+[submodule "deps/emscripten"]
+	path = deps/emscripten
+	url = git@github.com:kripken/emscripten.git

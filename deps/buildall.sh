@@ -105,5 +105,12 @@ cd ./asmjs
 npm install || checkExit
 cd ..
 
+# Doppio
+cd ./doppio
+npm install || checkExit
+bower install || checkExit
+grunt release || checkExit
+cd ../
+
 # Log
 echo -e "\n\n\x1B[32;1mCOMPLETED SUCCESSFULLY.\x1B[0m"

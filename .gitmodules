@@ -28,3 +28,6 @@
 [submodule "deps/llvm-clang"]
 	path = deps/llvm-clang
 	url = git@github.com:Codicle/lib-llvm-clang.git
+[submodule "deps/bashjs"]
+	path = deps/bashjs
+	url = git@github.com:Codicle/bash.js.git

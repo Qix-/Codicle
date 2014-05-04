@@ -16,13 +16,27 @@ if [[ `which npm 2>/dev/null | wc -l` -eq 0 ]]; then
 	exit 1
 fi
 
-if [[ `python --version` != "Python 2.7"* ]]; then
+if [[ `which python | wc -l` -eq 0 ]]; then
+	echo -e "\x1b[31;1mPYTHON NOT FOUND. CANNOT CONTINUE.\x1b[0m"
+	exit 1
+fi
+
+if [[ `python --version 2>&1` != "Python 2.7"* ]]; then
 	echo -e "\x1b[31;1mPYTHON 2.7.x NOT FOUND. CANNOT CONTINUE.\x1b[0m"
+	exit 1
+fi
+
+if [[ `which clang | wc -l` -eq 0 ]]; then
+	echo -e "\x1b[31;1mCLANG NOT FOUND. CANNOT CONTINUE.\x1b[0m"
 	exit 1
 fi
 
 if [[ `which grunt 2>/dev/null | wc -l` -eq 0 ]]; then
 	npm install -g grunt-cli || exit 1
+fi
+
+if [[ `which bower 2>/dev/null | wc -l` -eq 0 ]]; then
+	npm install -g bower || exit 1
 fi
 
 # ACE
@@ -72,5 +86,14 @@ cd ..
 # Emscripten
 cd ./emscripten
 npm install || exit 1
-emmake || exit 1
+emmake
 export PATH=$PATH:`pwd`
+cd ..
+
+# asm.js
+cd ./asmjs
+npm install || exit 1
+cd ..
+
+# Log
+echo -e "\n\n\x1B[32;1mCOMPLETED SUCCESSFULLY.\x1B[0m"

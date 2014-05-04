@@ -25,3 +25,6 @@
 [submodule "deps/phpjs"]
 	path = deps/phpjs
 	url = git@github.com:niklasvh/php.js.git
+[submodule "deps/llvm-clang"]
+	path = deps/llvm-clang
+	url = git@github.com:Codicle/lib-llvm-clang.git

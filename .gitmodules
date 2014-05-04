@@ -1,0 +1,30 @@
+[submodule "deps/ace"]
+	path = deps/ace
+	url = git@github.com:ajaxorg/ace.git
+[submodule "deps/buzz"]
+	path = deps/buzz
+	url = git@github.com:jaysalvat/buzz.git
+[submodule "deps/doppio"]
+	path = deps/doppio
+	url = git@github.com:plasma-umass/doppio.git
+[submodule "deps/asmjs"]
+	path = deps/asmjs
+	url = git@github.com:dherman/asm.js.git
+[submodule "deps/emscripten"]
+	path = deps/emscripten
+	url = git@github.com:kripken/emscripten.git
+[submodule "deps/skulpt"]
+	path = deps/skulpt
+	url = git@github.com:skulpt/skulpt.git
+[submodule "deps/gitpython"]
+	path = deps/gitpython
+	url = git://gitorious.org/git-python/mainline.git
+[submodule "deps/ez_setup"]
+	path = deps/ez_setup
+	url = git@github.com:ActiveState/ez_setup.git
+[submodule "deps/phpjs"]
+	path = deps/phpjs
+	url = git@github.com:niklasvh/php.js.git
+[submodule "deps/llvm-clang"]
+	path = deps/llvm-clang
+	url = git@github.com:Codicle/lib-llvm-clang.git

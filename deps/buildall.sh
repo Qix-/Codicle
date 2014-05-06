@@ -41,6 +41,10 @@ if [[ `which clang | wc -l` -eq 0 ]]; then
 	checkExit
 fi
 
+if [[ `which coffee 2>/dev/null | wc -l` -eq 0 ]]; then
+	npm install -g coffee-script || checkExit
+fi
+
 if [[ `which grunt 2>/dev/null | wc -l` -eq 0 ]]; then
 	npm install -g grunt-cli || checkExit
 fi
@@ -110,6 +114,11 @@ cd ./doppio
 npm install || checkExit
 bower install || checkExit
 grunt release || checkExit
+cd ../
+
+# BashJS
+cd ./bashjs
+coffee -o lib/ -c src/Bash-Ansi.coffee || checkExit
 cd ../
 
 # Log

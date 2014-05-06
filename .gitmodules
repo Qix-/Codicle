@@ -31,3 +31,6 @@
 [submodule "deps/bashjs"]
 	path = deps/bashjs
 	url = git@github.com:Codicle/bash.js.git
+[submodule "deps/async"]
+	path = deps/async
+	url = git@github.com:caolan/async.git

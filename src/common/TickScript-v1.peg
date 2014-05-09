@@ -1,0 +1,176 @@
+/**
+ * TickScript Grammar v1
+ *
+ *	This grammar is the most accurate
+ *	implementation of:
+ *  https://github.com/Codicle/Codicle/blob/master/doc/Player.md
+ */
+
+{
+	// Generate lookup table
+	var table = {};
+	var letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+	for(var i in letters)
+		table[letters[i]] = i;
+
+	// Specifies the current time offset
+	var offset = 0.0;
+
+	// Generates a float (in seconds)
+	//	given an integer value and a decimal
+	//	letter array.
+	function generateTime(ints, dec)
+	{
+		// Aggregate integers
+		var floatString;
+		if(ints.length)
+			floatString = ints.join('');
+		else
+			floatString = '0';
+
+		// Add decimal
+		floatString += '.';
+
+		// Translate all letters
+		if(dec.length)
+			for(var i in dec)
+				floatString += table[dec[i]];
+		else
+			floatString += '0';
+
+		// Return parsed
+		return parseFloat(floatString);
+	}
+}
+
+//- Series of ticks
+script "script"
+	= ticks:tick+
+		{
+			console.log(ticks);
+		}
+	;
+
+//- Major time (integer part of offset float)
+timeMajor "major time"
+	= [0-9]+
+	;
+
+//- Minor time (decimal part of offset float)
+timeMinor "minor time"
+	= [A-J]+
+	;
+
+//- List of commands
+command "command"
+	/**
+	 * Types a character
+	 */
+	= (':' chr:.)
+		{
+			return {name: 'type', args: [chr]} 
+		}
+
+	/**
+	 * Simulates arrow press
+	 */
+	/ ('^' direction:[UDLR])
+		{
+			var command = {name: 'arrow', args: []};
+			switch(direction)
+			{
+				case 'U': command.args[0] = 0; break;
+				case 'R': command.args[0] = 1; break;
+				case 'D': command.args[0] = 2; break;
+				case 'L': command.args[0] = 3; break;
+			}
+			return command;
+		}
+
+	/**
+	 * Repeats last command
+	 */
+	/ ('*' times:[0-9]+ ';')
+		{
+			var count = parseInt(times.join(''));
+			return {name: 'repeat', args: [count]};
+		}
+
+	/**
+	 * Simulate enter key
+	 */
+	/ '#'
+		{
+			return {name: 'enter'};
+		}
+
+	/**
+	 * Simulates delete key
+	 */
+	/ '/'
+		{
+			return {name: 'delete'};
+		}
+
+	/**
+	 * Simulates backspace key
+	 */
+	/ '<'
+		{
+			return {name: 'backspace'};
+		}
+
+	/**
+	 * Jumps to position
+	 */
+	/ ('@' row:[0-9]+ ',' col:[0-9]+ ';')
+		{
+			var rowNum = parseInt(row.join(''));
+			var colNum = parseInt(col.join(''));
+			return {name: 'pos', args: [rowNum, colNum]};
+		}
+
+	/**
+	 * Switches focus
+	 *	p = presentation
+	 *	e = editor
+	 */
+	/ ('>' pane:[pe])
+		{
+			var command = {name: "focus", args: []};
+			switch(pane)
+			{
+				case 'p': command.args[0] = 'presentation'; break;
+				case 'e': command.args[0] = 'editor'; break;
+			}
+
+			return command;
+		}
+
+	/**
+	 * Force-pauses playback
+	 */
+	/ '!'
+		{
+			return {name: 'pause'};
+		}
+
+	/**
+	 * Waits for console return
+	 */
+	/ '~'
+		{
+			return {name: 'waitForConsole'};
+		}
+	;
+
+tick "tick"
+	= (major:timeMajor? minor:timeMinor? cmd:command)
+	{
+		// Decode and apply offset
+		offset += generateTime(major || [], minor || []);
+
+		// Return
+		return [offset, cmd.name, cmd.args || []];
+	}
+	;

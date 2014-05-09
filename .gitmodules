@@ -34,3 +34,6 @@
 [submodule "deps/async"]
 	path = deps/async
 	url = git@github.com:caolan/async.git
+[submodule "deps/requirejs"]
+	path = deps/requirejs
+	url = git@github.com:jrburke/requirejs.git

@@ -112,7 +112,9 @@ a marker is `[D...][L...]S[A...]`:
 - `\s` _(space)_ denotes a marker that uses the same timestamp as the last marker
 - `D...`, if specified, denotes one or more digits that make up the **integer** portion of the seconds count
 - `L...`, if specified, denotes one or more **letter-mapped-digits** (A=0, B=1, ... J=9) that make up the **decimal** portion of the seconds count
+
 > If neither of the `D...` or `L...` blocks are specified, the marker is performed at the same time as the last marker.
+
 - `S` denotes a command. `S` must not be an alphanumeric character or `.` or whitespace
 - `A...` specifies one or more argument characters. These must either be a **constant length** or have a **terminator** (each command is different).
 Some commands to not accept arguments and thus the `A...` clause is omitted.

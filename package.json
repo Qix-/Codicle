@@ -1,0 +1,19 @@
+{
+	"name": "codicle",
+	"author": "JD Ballard <i.am.qix@gmail.com> (http://codicle.net)",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:Codicle/Codicle.git"
+		},
+	"issues": "https://github.com/Codicle/Codicle/issues",
+
+	"private": true,
+
+	"dependencies": {
+		"gulp": "~3.6.2",
+		"gulp-coffee": "~1.4.3",
+		"gulp-peg": "~0.1.1",
+		"gulp-concat": "~2.2.0",
+		"gulp-uglify": "~0.3.0"
+	}
+}

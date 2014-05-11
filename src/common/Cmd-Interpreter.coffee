@@ -36,20 +36,24 @@ class CLI
 
 		# Bind key press
 		@box.addEventListener 'keypress', (e) =>
-			# Switch key
-			switch e.which
-				when 13 then @execute()
-				when 38 then @lastCommand()
-				when 40 then @nextCommand()
+			# Enter?
+			@execute() if e.which is 13
 		
 		# Bind key down
 		@box.addEventListener 'keydown', (e) =>
-			# Tab?
-			if e.keyCode is 9
-				e.preventDefault()
-				@autoComplete()
-				@box.focus()
-				return false
+			# Switch
+			switch e.keyCode
+				# Tab
+				when 9
+					e.preventDefault()
+					@autoComplete()
+					@box.focus()
+					return false
+
+				# Up/Down
+				when 38 then @lastCommand()
+				when 40 then @nextCommand()
+
 	##
 	# Enables/disables the entry box
 	#	This is used mainly by the playback engine
@@ -62,6 +66,43 @@ class CLI
 	enabled: () ->
 		not @box.disabled
 
+	##
+	# Restores a command recently executed
+	# 	from higher in the list
+	lastCommand: () ->
+		# Check for beginning
+		return if @historyIndex is 0
+
+		# Have they been typing a command?
+		if @historyIndex is -1
+			return if @history.length is 0
+			@currentLine = @box.value
+			@historyIndex = @history.length
+
+		# Restore history
+		--@historyIndex
+		@box.value = @history[@historyIndex]
+
+	##
+	# Restores a command recently executed
+	# 	from lower in the list
+	nextCommand: () ->
+		# Check for end
+		return if @historyIndex is -1
+
+		# Increment and check
+		++@historyIndex
+		if @historyIndex is @history.length
+			# Restore and set
+			@box.value = @currentLine
+			@historyIndex = -1
+		else
+			# Restore
+			@box.value = @history[@historyIndex]
+
+	##
+	# Attempts to auto-complete what the user has
+	#	typed in.
 	autoComplete: () ->
 		# Get our value
 		value = @box.value

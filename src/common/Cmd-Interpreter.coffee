@@ -15,6 +15,15 @@ class CLI
 				log.scrollTop = log.scrollHeight;
 		}
 
+		# Setup history
+		#	currentLine is so if we type something,
+		#	hit up, and then back down, what we were
+		#	typing persists. This is common functionality
+		#	with a lot of CLI's.
+		@history = []
+		@currentLine = ""
+		@historyIndex = -1
+
 		# Setup path
 		#	Entries are [fn, helptext]
 		#
@@ -25,12 +34,22 @@ class CLI
 			cd: [@cd, 'CD normally changes directory; however, this lesson hasn\'t implemented a filesystem.']
 			man: [@man, 'Displays help for a particular command (i.e. man echo)']
 
-		# Bind key entry
+		# Bind key press
 		@box.addEventListener 'keypress', (e) =>
-			# Enter?
-			if e.which is 13
-				@execute()
-
+			# Switch key
+			switch e.which
+				when 13 then @execute()
+				when 38 then @lastCommand()
+				when 40 then @nextCommand()
+		
+		# Bind key down
+		@box.addEventListener 'keydown', (e) =>
+			# Tab?
+			if e.keyCode is 9
+				e.preventDefault()
+				@autoComplete()
+				@box.focus()
+				return false
 	##
 	# Enables/disables the entry box
 	#	This is used mainly by the playback engine
@@ -42,6 +61,42 @@ class CLI
 	# Returns whether or not manual input is enabled
 	enabled: () ->
 		not @box.disabled
+
+	autoComplete: () ->
+		# Get our value
+		value = @box.value
+
+		# Are we still typing a command?
+		#	Yes, autocomplete only works with
+		#	non-quoted commands.
+		return if value.match /^\s*[^\s]+\s+/
+		value = value.replace /^\s*/, ''
+
+		# Empty value?
+		if value.length is 0
+			@write "#{Object.keys(@path).join '\n'}\n\n"
+			return @write "\n\n"
+
+		# Setup matches
+		matches = []
+
+		# Iterate path
+		for entry of @path
+			# Does it match?
+			matches.push entry if entry.indexOf(value) is 0
+
+		# Any? :(
+		return if matches.length is 0
+
+		# Append and continue
+		if matches.length is 1
+			@box.value += matches[0].substring value.length
+			@box.value += ' '
+			return
+
+		# Display possibilities
+		return @write "#{matches.join '\n'}\n\n"
+
 
 	##
 	# Writes output (with full ANSI support)
@@ -60,6 +115,10 @@ class CLI
 		value = @box.value
 		@box.value = ''
 		nl = true
+
+		# Reset history index
+		@historyIndex = -1
+		@currentLine = ''
 
 		try
 			# Log
@@ -92,6 +151,9 @@ class CLI
 			#	(i.e. --foo=bar -> "--foo", "bar")
 			res = bin[0].apply @, [value].concat cmd.args
 			if res is true then nl = false
+
+			# Add to history
+			@history.push value
 		finally
 			@write "\n" if nl
 

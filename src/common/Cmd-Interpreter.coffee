@@ -63,7 +63,7 @@ class CLI
 
 		try
 			# Log
-			@write "\x1B[30;1m>\x1B[0m #{value}\n"
+			@write "\x1B[30;1m>\x1B[37m #{value}\x1B[0m\n"
 
 			# Parse!
 			cmd = CLIParser.parse value

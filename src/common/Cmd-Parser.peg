@@ -33,13 +33,13 @@ escape "escape"
 	/ (E 'n') { return '\n'; }
 	/ (E 'r') { return '\r'; }
 	/ (E 't') { return '\t'; }
-	/ (E 'o'? octals:([0-9] [0-9] [0-9])) { return String.fromCharCode(parseInt(octals.join(''), 8)); }
-	/ (E 'x' hexes:(hex hex)) { return String.fromCharCode(parseInt(hexes.join(''), 16)); }
-	/ (E 'u' hexes:(hex hex hex hex)) { return String.fromCharCode(parseInt(hexes.join(''), 16)); }
+	/ (E 'o'i? octals:([0-9] [0-9] [0-9])) { return String.fromCharCode(parseInt(octals.join(''), 8)); }
+	/ (E 'x'i hexes:(hex hex)) { return String.fromCharCode(parseInt(hexes.join(''), 16)); }
+	/ (E 'u'i hexes:(hex hex hex hex)) { return String.fromCharCode(parseInt(hexes.join(''), 16)); }
 	;
 
 visible "non-spacing character"
-	= !WS chr:(escape / .) { return chr; }
+	= !WS chr:. { return chr; }
 	;
 
 ident "identifier character"

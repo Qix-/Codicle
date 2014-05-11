@@ -15,7 +15,7 @@ class TickScript
 
 		# Create commander
 		@commands =
-			new Codicle.interpreter[@script['version']] @commands
+			new Codicle.Interpreter @commands
 
 		# Log
 		console.log "Enumerated #{@commands.events.length} ticks"

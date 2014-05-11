@@ -10,7 +10,7 @@ gulp.task('common-grammar', function()
 		.pipe(peg({
 				exportVar: 'TSParser'
 			}))
-		.pipe(gulp.dest('./build/common/js/grammar'));
+		.pipe(gulp.dest('./build/common/js'));
 });
 
 gulp.task('common-coffee', function()
@@ -24,8 +24,7 @@ gulp.task('common-pkg', ['common-coffee', 'common-grammar'], function()
 {
 	gulp.src('./build/common/js/**/*.js')
 		.pipe(uglify())
-		.pipe(gulp.dest('./pkg/client/js'))
-		.pipe(gulp.dest('./pkg/server/js'));
+		.pipe(gulp.dest('./pkg/static/js'));
 });
 
 gulp.task('default', ['common-pkg']);

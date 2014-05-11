@@ -62,5 +62,4 @@ class TickScriptV1
 if module?
 	module.exports = TickScriptV1
 else
-	Codicle.interpreter = {} if not Codicle.interpreter
-	Codicle.interpreter.v1 = TickScriptV1
+	Codicle.Interpreter = TickScriptV1

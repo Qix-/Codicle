@@ -16,15 +16,37 @@ WS "whitespace"
 	= ' '
 	;
 
+E "escape character"
+	= '\\'
+	;
+
+hex "hex character"
+	= [0-9A-F]i
+	;
+
+escape "escape"
+	= (E '\'') { return '\''; }
+	/ (E '\"') { return '\"'; }
+	/ (E '\\') { return '\\'; }
+	/ (E 'b') { return '\b'; }
+	/ (E 'f') { return '\f'; }
+	/ (E 'n') { return '\n'; }
+	/ (E 'r') { return '\r'; }
+	/ (E 't') { return '\t'; }
+	/ (E 'o'? octals:([0-9] [0-9] [0-9])) { return String.fromCharCode(parseInt(octals.join(''), 8)); }
+	/ (E 'x' hexes:(hex hex)) { return String.fromCharCode(parseInt(hexes.join(''), 16)); }
+	/ (E 'u' hexes:(hex hex hex hex)) { return String.fromCharCode(parseInt(hexes.join(''), 16)); }
+	;
+
 visible "non-spacing character"
-	= (!WS chr:.) { return chr; }
+	= !WS chr:(escape / .) { return chr; }
 	;
 
 ident "identifier character"
 	= (!'=' chr:visible) { return chr; }
 
 string "string"
-	= '"' str:(('\\\\' / ('\\"') / [^"])+) '"' { return str.join(''); }
+	= '"' str:(('\\\\' / escape / ('\\"') / [^"])+) '"' { return str.join(''); }
 	;
 
 name "name"

@@ -56,7 +56,7 @@ fi
 # ACE
 cd ./ace
 npm install || checkExit
-node ./Makefile.dryice.js || checkExit
+node ./Makefile.dryice.js full --target ./ace-builds || checkExit
 cd ..
 
 # Buzz

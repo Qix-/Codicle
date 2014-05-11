@@ -1,0 +1,57 @@
+/**
+ * CLI Parser for Codicle
+ */
+
+start
+	= (WS+)? command:fragment arguments:argumentFragment* (WS+)?
+	{
+		return {
+			command: command,
+			args: arguments
+		};
+	}
+	;
+
+WS "whitespace"
+	= ' '
+	;
+
+visible "non-spacing character"
+	= (!WS chr:.) { return chr; }
+	;
+
+ident "identifier character"
+	= (!'=' chr:visible) { return chr; }
+
+string "string"
+	= '"' str:(('\\\\' / ('\\"') / [^"])+) '"' { return str.join(''); }
+	;
+
+name "name"
+	= chrs:ident+ { return chrs.join(''); }
+	;
+
+fragment "fragment"
+	= string
+	/ name
+	;
+
+argument "argument"
+	= pair:pair
+	/ frag:fragment
+	{
+		return typeof pair != 'undefined' ? pair : { key: frag };
+	}
+	;
+
+argumentFragment "argument fragment"
+	= (WS+ arg:argument) { return arg; }
+	;
+
+pair "argument pair"
+	= arg:name value:pairVal { return {key: arg, val: value}; }
+	;
+
+pairVal "argument pair value"
+	= '=' value:fragment { return value; }
+	;

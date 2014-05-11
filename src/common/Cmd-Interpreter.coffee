@@ -22,6 +22,7 @@ class CLI
 		#	passed to the command function
 		@path =
 			echo: [@echo, 'Echos whatever you give it!\n\tUsage: echo [-n] message']
+			cd: [@cd, 'CD normally changes directory; however, this lesson hasn\'t implemented a filesystem.']
 
 		# Bind key entry
 		@box.addEventListener 'keypress', (e) =>
@@ -135,6 +136,15 @@ class CLI
 		#
 		#	Useless, really.
 		return not newLine
+
+	##
+	# Also a lie.
+	#
+	#	This may be overridden, of course.
+	#	Especially by the git lessons.
+	cd: () ->
+		@write "This lesson hasn't implemented a filesystem!\n"
+
 
 # Export
 if module?

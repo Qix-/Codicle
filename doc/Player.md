@@ -76,6 +76,7 @@ The JSON format for a tickscript file is as follows:
 
 ```
 {
+	"version": <string> tick spec version ('v1', etc.)
 	"name": <string> lesson name
 	"author": <string> author name
 	"audio": <url> the audio clip to use (omit extension; must have WAV and OGG formats)

@@ -13,20 +13,29 @@ class TickScript
 		# Parse ticks
 		@parse()
 
+		# Create commander
+		@commands =
+			new Codicle.interpreter[@script['version']] @commands
+
+		# Log
+		console.log "Enumerated #{@commands.events.length} ticks"
+
 	##
 	# Validates this Tickscript's contents
 	validate: () ->
-		if not @script.name or @script.name not instanceof String
+		if not @script.version or typeof @script.version isnt 'string'
+			throw "TickScript version isn't string: #{@script.version}"
+		if not @script.name or typeof @script.name isnt 'string'
 			throw "TickScript name isn't string: #{@script.name}"
-		if not @script.author or @script.author not instanceof String
+		if not @script.author or typeof @script.author isnt 'string'
 			throw "TickScript author isn't string: #{@script.author}"
-		if not @script.audio or @script.audio not instanceof String
+		if not @script.audio or typeof @script.audio isnt 'string'
 			throw "TickScript audio track isn't string: #{@script.audio}"
-		if not @script.bgm or @script.bgm not instanceof String
+		if not @script.bgm or typeof @script.bgm isnt 'string'
 			throw "TickScript background music isn't string: #{@script.bgm}"
 		if not @script.chapters or @script.chapters not instanceof Object
 			throw "TickScript chapters is either empty or not a map"
-		if not @script.ticks or @script.ticks not instanceof String
+		if not @script.ticks or typeof @script.ticks isnt 'string'
 			throw "TickScript ticks isn't a string: #{@script.ticks}"
 
 	##
@@ -43,7 +52,7 @@ class TickScript
 
 
 # Export
-if module
+if module?
 	module.exports = TickScript
 else
 	Codicle.Script = TickScript

@@ -46,9 +46,6 @@
 //- Series of ticks
 script "script"
 	= ticks:tick+
-		{
-			console.log(ticks);
-		}
 	;
 
 //- Major time (integer part of offset float)

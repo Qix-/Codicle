@@ -10,7 +10,7 @@ class TickScriptV1
 	#				  from a tickscript v1 string
 	constructor: (commands) ->
 		# Compile events
-		@events = {}
+		@events = []
 		@compile commands
 
 	##
@@ -19,9 +19,10 @@ class TickScriptV1
 	# @param commands The commands to compile
 	compile: (commands) ->
 		for command in commands
-			bound = () =>
-				@[command[1]].apply @, command[2]
-			@events[command[0]] = bound
+			fn = @[command[1]]
+			args = command[2]
+			bound = fn.bind.apply fn, [@].concat args
+			@events.push [command[0], bound]
 
 	################################################
 	# TICKSCRIPT COMMANDS
@@ -58,7 +59,7 @@ class TickScriptV1
 		console.log 'wait (for console)'
 
 # Export
-if module
+if module?
 	module.exports = TickScriptV1
 else
 	Codicle.interpreter = {} if not Codicle.interpreter

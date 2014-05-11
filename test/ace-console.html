@@ -43,7 +43,14 @@
 			width: 100%;
 		}
 		</style>
+		<script type="text/javascript">
+		window.Codicle = {};
+		</script>
 		<script type="text/javascript" src="../deps/ace/ace-builds/src-noconflict/ace.js"></script>
+		<script type="text/javascript" src="../pkg/static/js/TickScript-v1-Receiver.js"></script>
+		<script type="text/javascript" src="../pkg/static/js/TickScript-v1-Parser.js"></script>
+		<script type="text/javascript" src="../pkg/static/js/TickScript-v1-Interpreter.js"></script>
+		<script type="text/javascript" src="../pkg/static/js/TickScript.js"></script>
 		<script type="text/javascript">
 		window.addEventListener("load", function()
 		{
@@ -54,6 +61,28 @@
 				if(e.which == '13')
 					consoleInput.value = '';
 			});
+
+			// Create some ticks
+			var ticks = ">e@0,0;3F:HB:eB:lB:lB:oB:,B: B:wB:oB:rB:lB:dB:!B: B::B:)*2;1B<B<1#!";
+
+			// Create a TickScript
+			var tickScript = {
+				"version": "v1",
+				"name": "Test Tickscript",
+				"author": "Qix",
+				"audio": "null",
+				"bgm": "null",
+				"chapters": {},
+				"ticks": ticks
+			};
+
+			// Generate object
+			var script = new Codicle.Script(tickScript);
+
+			// Timeout all events
+			for(var i = 0, len = script.commands.events.length; i < len; i++) {
+				setTimeout(script.commands.events[i][1], script.commands.events[i][0] * 1000)
+			}
 		});
 		</script>
 	</head>

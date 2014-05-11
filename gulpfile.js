@@ -23,7 +23,7 @@ gulp.task('common-coffee', function()
 gulp.task('common-pkg', ['common-coffee', 'common-grammar'], function()
 {
 	gulp.src('./build/common/js/**/*.js')
-		.pipe(uglify())
+		//.pipe(uglify())
 		.pipe(gulp.dest('./pkg/static/js'));
 });
 

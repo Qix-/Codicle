@@ -13,9 +13,13 @@ class TickScript
 		# Parse ticks
 		@parse()
 
+		# Create receiver
+		@receiver =
+			new Codicle.Receiver {}, {}
+
 		# Create commander
 		@commands =
-			new Codicle.Interpreter @commands
+			new Codicle.Interpreter @commands, @receiver
 
 		# Log
 		console.log "Enumerated #{@commands.events.length} ticks"

@@ -8,55 +8,23 @@ class TickScriptV1
 	##
 	# @param commands The commands parsed
 	#				  from a tickscript v1 string
-	constructor: (commands) ->
+	# @param receiver The receiver that should handle commands
+	constructor: (commands, receiver) ->
 		# Compile events
 		@events = []
-		@compile commands
+		@compile commands, receiver
 
 	##
 	# Compiles commands down to
 	#	bound functions
 	# @param commands The commands to compile
-	compile: (commands) ->
+	# @param receiver The receiver to bind to
+	compile: (commands, receiver) ->
 		for command in commands
-			fn = @[command[1]]
+			fn = receiver[command[1]]
 			args = command[2]
-			bound = fn.bind.apply fn, [@].concat args
+			bound = fn.bind.apply fn, [receiver].concat args
 			@events.push [command[0], bound]
-
-	################################################
-	# TICKSCRIPT COMMANDS
-	################################################
-
-	type: (chr) ->
-		console.log 'type:', chr
-
-	arrow: (direction) ->
-		console.log 'arrow:', direction
-
-	repeat: (times) ->
-		console.log 'repeat:', times
-
-	enter: () ->
-		console.log 'enter'
-
-	del: () ->
-		console.log 'delete'
-
-	backspace: () ->
-		console.log 'backspace'
-
-	pos: (row, col) ->
-		console.log "pos: #{row}, #{col}"
-
-	focus: (component) ->
-		console.log 'focus:', component
-
-	pause: () ->
-		console.log 'pause'
-
-	wait: () ->
-		console.log 'wait (for console)'
 
 # Export
 if module?

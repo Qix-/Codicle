@@ -6,9 +6,15 @@ var clean = require('gulp-clean');
 
 gulp.task('common-grammar', function()
 {
-	gulp.src('./src/common/*.peg')
+	gulp.src('./src/common/TickScript-v1-Parser.peg')
 		.pipe(peg({
 				exportVar: 'TSParser'
+			}))
+		.pipe(gulp.dest('./build/common/js'));
+
+	gulp.src('./src/common/Cmd-Parser.peg')
+		.pipe(peg({
+				exportVar: 'CLIParser'
 			}))
 		.pipe(gulp.dest('./build/common/js'));
 });

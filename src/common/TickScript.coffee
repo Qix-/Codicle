@@ -34,8 +34,16 @@ class TickScript
 	#	This expands times to absolute times, making use
 	#	of the parser compiled from the Peg.JS grammar.
 	parse: () ->
-			# Try to parse
-			commands = TickParser.parse @script.ticks
+		# Try to parse
+		@commands = TSParser.parse @script.ticks
+
+		# Check
+		if not @commands
+			throw "Tickscript ticks could not be parsed"
+
 
 # Export
-module.exports = TickScript
+if module
+	module.exports = TickScript
+else
+	Codicle.Script = TickScript

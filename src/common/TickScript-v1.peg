@@ -109,7 +109,7 @@ command "command"
 	 */
 	/ '/'
 		{
-			return {name: 'delete'};
+			return {name: 'del'};
 		}
 
 	/**

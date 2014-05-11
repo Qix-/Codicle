@@ -23,6 +23,7 @@ class CLI
 		@path =
 			echo: [@echo, 'Echos whatever you give it!\n\tUsage: echo [-n] message']
 			cd: [@cd, 'CD normally changes directory; however, this lesson hasn\'t implemented a filesystem.']
+			man: [@man, 'Displays help for a particular command (i.e. man echo)']
 
 		# Bind key entry
 		@box.addEventListener 'keypress', (e) =>
@@ -144,6 +145,25 @@ class CLI
 	#	Especially by the git lessons.
 	cd: () ->
 		@write "This lesson hasn't implemented a filesystem!\n"
+
+	##
+	# Displays help about a command
+	#
+	#	Man is a TOTAL lie by now...
+	# @param command The name of the command to lookup
+	man: (c, command) ->
+		# Command?
+		if not command
+			@write @path['man'][1], '\n'
+			return @write "error: no command given\n"
+
+		# Do we have the command?
+		cmd = @path[command.key]
+		if not cmd
+			return @write "unknown command: #{command.key}\n"
+
+		# Display the help text
+		@write "#{cmd[1]}\n"
 
 
 # Export

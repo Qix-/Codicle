@@ -25,6 +25,7 @@ class TickScriptV1
 			args = command[2]
 			bound = fn.bind.apply fn, [receiver].concat args
 			@events.push [command[0], bound]
+		return
 
 # Export
 if module?

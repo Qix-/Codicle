@@ -48,6 +48,7 @@
 		</script>
 		<script type="text/javascript" src="../deps/ace/ace-builds/src-noconflict/ace.js"></script>
 		<script type="text/javascript" src="../pkg/static/js/TickScript-v1-Receiver.js"></script>
+		<script type="text/javascript" src="../pkg/static/js/TickScript-v1-Receiver-Ace.js"></script>
 		<script type="text/javascript" src="../pkg/static/js/TickScript-v1-Parser.js"></script>
 		<script type="text/javascript" src="../pkg/static/js/TickScript-v1-Interpreter.js"></script>
 		<script type="text/javascript" src="../pkg/static/js/TickScript.js"></script>
@@ -77,7 +78,7 @@
 			};
 
 			// Generate object
-			var script = new Codicle.Script(tickScript);
+			var script = new Codicle.Script(tickScript, editor);
 
 			// Timeout all events
 			for(var i = 0, len = script.commands.events.length; i < len; i++) {

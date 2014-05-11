@@ -7,11 +7,14 @@ class ReceiverV1
 	##
 	# @param editor The ACE editor to manipulate
 	# @param console The console handler to manipulate
-	constructor: (@editor, @console) ->
+	constructor: (editor, console) ->
+		# Setup editor/console receivers
+		@editor = new Codicle.ReceiverAce editor
+
 		# Focus the editor by default
 		#	with a fallback of the console
-		@focus = @editor || @console
-		if not @focus?
+		@focused = @editor || @console
+		if not @focused?
 			throw "Both editor and console are null for receiver"
 
 		# Setup last command
@@ -25,47 +28,47 @@ class ReceiverV1
 
 	type: (chr) ->
 		@lastCmd = ['type', arguments]
-		@focus.type chr
+		@focused.type chr
 
 	arrow: (direction) ->
 		@lastCmd = ['arrow', arguments]
-		if @focus is @console
+		if @focused is @console
 			switch direction
 				when 0 then @console.lastCommand()
 				when 2 then @console.nextCommand()
 				when 1 then @console.right()
 				when 3 then @console.left()
 		else
-			@focus.arrow direction
+			@focused.arrow direction
 		return
 
 	repeat: (times) ->
 		return if not @lastCmd or not @lastCmd.length
 		args = [].slice.call @lastCmd[1]
-		@lastCmd[0].apply @, args for [1..times]
+		@[@lastCmd[0]].apply @, args for [1..times]
 		return
 
 	enter: () ->
 		@lastCmd = ['enter', arguments]
-		if @focus is @console then @console.execute()
-		else @focus.enter()
+		if @focused is @console then @console.execute()
+		else @focused.enter()
 
 	del: () ->
 		@lastCmd = ['del', arguments]
-		@focus.del()
+		@focused.del()
 
 	backspace: () ->
 		@lastCmd = ['backspace', arguments]
-		@focus.backspace()
+		@focused.backspace()
 
 	pos: (row, col) ->
 		@lastCmd = ['pos', arguments]
-		if @focus is @console then @console.col col
-		else @focus.pos row, col
+		if @focused is @console then @console.col col
+		else @focused.pos row, col
 
 	focus: (component) ->
 		@lastCmd = ['focus', arguments]
-		@focus =
+		@focused =
 			switch component
 				when 'presentation' then @console
 				when 'editor' then @editor

@@ -6,7 +6,8 @@
 class TickScript
 	##
 	# @param script The script data to work from
-	constructor: (@script) ->
+	# @param editor A handle to the Ace editor
+	constructor: (@script, editor) ->
 		# Validate tickscript
 		@validate()
 

@@ -7,7 +7,9 @@ var clean = require('gulp-clean');
 gulp.task('common-grammar', function()
 {
 	gulp.src('./src/common/*.peg')
-		.pipe(peg())
+		.pipe(peg({
+				exportVar: 'TSParser'
+			}))
 		.pipe(gulp.dest('./build/common/js/grammar'));
 });
 

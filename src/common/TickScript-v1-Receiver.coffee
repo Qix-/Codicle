@@ -7,7 +7,7 @@ class ReceiverV1
 	##
 	# @param editor The ACE editor to manipulate
 	# @param console The console handler to manipulate
-	constructor: (editor, console) ->
+	constructor: (editor, @console) ->
 		# Setup editor/console receivers
 		@editor = new Codicle.ReceiverAce editor
 
@@ -29,7 +29,10 @@ class ReceiverV1
 
 	type: (chr) ->
 		@lastCmd = ['type', arguments]
-		@focused.type chr
+		if @focused is @console and chr is '\t'
+			@console.autoComplete()
+		else
+			@focused.type chr
 
 	arrow: (direction) ->
 		@lastCmd = ['arrow', arguments]

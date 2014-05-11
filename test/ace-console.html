@@ -7,6 +7,7 @@
 			margin: 0;
 			padding: 0;
 			position: relative;
+			border: none;
 		}
 
 		html, body {
@@ -31,40 +32,49 @@
 			right: 0px;
 		}
 
-		#right textarea {
+		#right > div {
 			height: 95%;
 			width: 100%;
 			display: block;
-			background-color: #EEE;
+			background-color: #222;
+			color: lightgray;
+			font-family: "Consolas", "Courier New", "Courier MS", monospace;
+			font-size: 11px;
+			overflow-x: auto;
+			overflow-y: scroll;
 		}
 
 		#right input {
 			height: 30px;
 			width: 100%;
+			background-color: #222;
+			color: lightgray;
+			font-family: "Consolas", "Courier New", "Courier MS", monospace;
+			font-size: 11px;
+			border: none;
 		}
 		</style>
+		<link rel="stylesheet" type="text/css" href="../deps/bashjs/css/bash-ansi.css" />
 		<script type="text/javascript">
 		window.Codicle = {};
 		</script>
 		<script type="text/javascript" src="../deps/ace/ace-builds/src-noconflict/ace.js"></script>
+		<script type="text/javascript" src="../deps/bashjs/lib/Bash-Ansi.js"></script>
 		<script type="text/javascript" src="../pkg/static/js/TickScript-v1-Receiver.js"></script>
 		<script type="text/javascript" src="../pkg/static/js/TickScript-v1-Receiver-Ace.js"></script>
 		<script type="text/javascript" src="../pkg/static/js/TickScript-v1-Parser.js"></script>
 		<script type="text/javascript" src="../pkg/static/js/TickScript-v1-Interpreter.js"></script>
+		<script type="text/javascript" src="../pkg/static/js/Cmd-Parser.js"></script>
+		<script type="text/javascript" src="../pkg/static/js/Cmd-Interpreter.js"></script>
 		<script type="text/javascript" src="../pkg/static/js/TickScript.js"></script>
 		<script type="text/javascript">
 		window.addEventListener("load", function()
 		{
 			window.editor = ace.edit('left');
-			var consoleInput = document.querySelector('#input');
-			// NOTE: this just tests automation; it does NOT test REPL
-			consoleInput.addEventListener('keypress', function(e) {
-				if(e.which == '13')
-					consoleInput.value = '';
-			});
 
 			// Create some ticks
-			var ticks = ">e@1,1;3F:HB:eB:lB:lB:oB:,B: B:wB:oB:rB:lB:dB:!B: B::B:)*2;1B<B<1#!";
+			var ticks = ">eF:AF:BF:\nF:CF:DF^UF:EF^DF:FF^LF:GF^RF:HF*2;F#F#F:IF^LF/F:JF<F@0,1;F#F#F#"
+				+ ">pB:eB:cB:hB:oB: B:hB:eB:lB:lB:oF#F^UF#F*2;F:AF:BF^LF/F<F:HF:iF:!F@0,0;F/F*2;F#";
 
 			// Create a TickScript
 			var tickScript = {
@@ -77,8 +87,14 @@
 				"ticks": ticks
 			};
 
+			// Create CLI
+			var cli = new Codicle.CLI(
+				document.querySelector('input'),
+				document.querySelector('#output')
+				);
+
 			// Generate object
-			var script = new Codicle.Script(tickScript, editor);
+			var script = new Codicle.Script(tickScript, editor, cli);
 
 			// Timeout all events
 			for(var i = 0, len = script.commands.events.length; i < len; i++) {
@@ -90,8 +106,7 @@
 	<body>
 		<div id="left"></div>
 		<div id="right">
-			<textarea id="output">Console output will show here.
-</textarea>
+			<div id="output"></div>
 			<input type="text" id="input" />
 		</div>
 	</body>

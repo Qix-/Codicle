@@ -24,6 +24,11 @@ class CLI
 		@currentLine = ""
 		@historyIndex = -1
 
+		# Setup buffer caret position
+		#	This is used when the box is being
+		#	automated
+		@caretPosition = 0
+
 		# Setup path
 		#	Entries are [fn, helptext]
 		#
@@ -66,6 +71,14 @@ class CLI
 	enabled: () ->
 		not @box.disabled
 
+	type: (chr) ->
+		if @caretPosition is @box.value.length
+			@box.value += chr
+		else
+			@box.value = @box.value.substring(0, @caretPosition) + chr +
+				@box.value.substring(@caretPosition)
+		@caretPosition += chr.length
+
 	##
 	# Restores a command recently executed
 	# 	from higher in the list
@@ -83,6 +96,9 @@ class CLI
 		--@historyIndex
 		@box.value = @history[@historyIndex]
 
+		# Reset caret position
+		@caretPosition = @box.value.length
+
 	##
 	# Restores a command recently executed
 	# 	from lower in the list
@@ -99,6 +115,48 @@ class CLI
 		else
 			# Restore
 			@box.value = @history[@historyIndex]
+
+		# Reset caret position
+		@caretPosition = @box.value.length
+
+	##
+	# Moves the internal caret position left
+	left: () ->
+		--@caretPosition if @caretPosition > 0
+
+	##
+	# Moves the internal caret position right
+	right: () ->
+		++@caretPosition if @caretPosition < @box.value.length
+
+	##
+	# Deletes a character at the caret position
+	del: () ->
+		return if @caretPosition is @box.value.length
+		if @caretPosition is @box.value.length - 1
+			@box.value = @box.value.substring 0, @box.value.length - 1
+		else if @caretPosition > 0
+			@box.value = @box.value.substring(0, @caretPosition) + @box.value.substring(@caretPosition + 1)
+		else
+			@box.value = @box.value.substring 1
+
+	##
+	# Backspaces a character at the caret position
+	backspace: () ->
+		return if @caretPosition is 0
+		if @caretPosition is 1
+			@box.value = @box.value.substring 1
+		else if @caretPosition is @box.value.length
+			@box.value = @box.value.substring 0, @box.value.length - 1
+		else
+			@box.value = @box.value.substring(0, @caretPosition - 1) + @box.value.substring @caretPosition
+		--@caretPosition
+
+	##
+	# Sets the absolute column
+	# @param column The column to jump to
+	col: (column) ->
+		@caretPosition = column
 
 	##
 	# Attempts to auto-complete what the user has
@@ -133,6 +191,9 @@ class CLI
 		if matches.length is 1
 			@box.value += matches[0].substring value.length
 			@box.value += ' '
+
+			# Reset buffer caret position
+			@caretPosition = @box.value.length
 			return
 
 		# Display possibilities
@@ -152,10 +213,16 @@ class CLI
 	##
 	# Executes the current command
 	execute: () ->
+		# Empty?
+		return if not @box.value.length
+
 		# Get value
 		value = @box.value
 		@box.value = ''
 		nl = true
+
+		# Reset buffer caret position
+		@caretPosition = 0
 
 		# Reset history index
 		@historyIndex = -1

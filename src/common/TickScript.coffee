@@ -7,7 +7,8 @@ class TickScript
 	##
 	# @param script The script data to work from
 	# @param editor A handle to the Ace editor
-	constructor: (@script, editor) ->
+	# @param cli A handle to a CLI instance
+	constructor: (@script, editor, cli) ->
 		# Validate tickscript
 		@validate()
 
@@ -16,7 +17,7 @@ class TickScript
 
 		# Create receiver
 		@receiver =
-			new Codicle.Receiver editor, {}
+			new Codicle.Receiver editor, cli
 
 		# Create commander
 		@commands =

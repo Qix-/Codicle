@@ -33,6 +33,7 @@ escape "escape"
 	/ (E 'n') { return '\n'; }
 	/ (E 'r') { return '\r'; }
 	/ (E 't') { return '\t'; }
+	/ (E 'e') { return '\x1b'; }
 	/ (E 'o'i? octals:([0-9] [0-9] [0-9])) { return String.fromCharCode(parseInt(octals.join(''), 8)); }
 	/ (E 'x'i hexes:(hex hex)) { return String.fromCharCode(parseInt(hexes.join(''), 16)); }
 	/ (E 'u'i hexes:(hex hex hex hex)) { return String.fromCharCode(parseInt(hexes.join(''), 16)); }

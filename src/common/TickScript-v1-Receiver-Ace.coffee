@@ -8,24 +8,38 @@ class AceReceiverV1
 	##
 	# @param ace The Ace editor instance
 	constructor: (@ace) ->
+		console.log @ace
 
 	type: (chr) ->
-		console.log "ACE TYPE:", chr
+		@ace.onTextInput chr
 
 	arrow: (direction) ->
-		console.log "ACE ARROW:", direction
+		switch direction
+			when 0 then @ace.navigateUp 1
+			when 1 then @ace.navigateRight 1
+			when 2 then @ace.navigateDown 1
+			when 3 then @ace.navigateLeft 1
 
 	enter: () ->
-		console.log "ACE ENTER"
+		@type '\n'
 
 	del: () ->
-		console.log "ACE DELETE"
+		# Found this by doing editor.keyBinding
+		#	after doing editor.onTextInput (with no parens)
+		#	in a debugging console. Ace has poor documentation.
+		@ace.remove 'right'
 
 	backspace: () ->
-		console.log "ACE BACKSPACE"
+		# Found this by doing editor.keyBinding
+		#	after doing editor.onTextInput (with no parens)
+		#	in a debugging console. Ace has poor documentation.
+		@ace.remove 'left'
 
 	pos: (row, col) ->
-		console.log "ACE POS: #{row}:#{col}"
+		@ace.moveCursorToPosition {
+			row: row
+			col: col
+		}
 
 
 # Export

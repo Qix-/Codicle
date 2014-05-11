@@ -16,6 +16,7 @@ class ReceiverV1
 		@focused = @editor || @console
 		if not @focused?
 			throw "Both editor and console are null for receiver"
+		@focused.focus() if @focused.focus
 
 		# Setup last command
 		#	Used by repeat
@@ -68,10 +69,12 @@ class ReceiverV1
 
 	focus: (component) ->
 		@lastCmd = ['focus', arguments]
+		@focused.blur() if @focused.blur
 		@focused =
 			switch component
 				when 'presentation' then @console
 				when 'editor' then @editor
+		@focused.focus() if @focused.focus
 
 	pause: () ->
 		@lastCmd = ['pause', arguments]

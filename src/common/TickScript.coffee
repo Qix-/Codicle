@@ -16,7 +16,7 @@ class TickScript
 
 		# Create receiver
 		@receiver =
-			new Codicle.Receiver {}, {}
+			new Codicle.Receiver editor, {}
 
 		# Create commander
 		@commands =

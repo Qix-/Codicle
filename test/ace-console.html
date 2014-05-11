@@ -55,7 +55,7 @@
 		<script type="text/javascript">
 		window.addEventListener("load", function()
 		{
-			var editor = ace.edit('left');
+			window.editor = ace.edit('left');
 			var consoleInput = document.querySelector('#input');
 			// NOTE: this just tests automation; it does NOT test REPL
 			consoleInput.addEventListener('keypress', function(e) {
@@ -64,7 +64,7 @@
 			});
 
 			// Create some ticks
-			var ticks = ">e@0,0;3F:HB:eB:lB:lB:oB:,B: B:wB:oB:rB:lB:dB:!B: B::B:)*2;1B<B<1#!";
+			var ticks = ">e@1,1;3F:HB:eB:lB:lB:oB:,B: B:wB:oB:rB:lB:dB:!B: B::B:)*2;1B<B<1#!";
 
 			// Create a TickScript
 			var tickScript = {

@@ -1,3 +1,4 @@
 /build/
 /node_modules/
 /pkg/
+/recorder/ # See LICENSE for information

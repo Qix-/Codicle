@@ -1,0 +1,9 @@
+# I'm ignoring audio files here
+#	because:
+#	- They're big
+#	- Most of them were copyrighted
+#	- Your dubstep is inferior.
+*.ogg
+*.mp3
+*.wav
+*.aac

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Codicle | Buzz Adapter Test</title>
+		<script type="text/javascript">
+		window.Codicle = {};
+		</script>
+		<script type="text/javascript" src="../deps/buzz/dist/buzz.js"></script>
+		<script type="text/javascript" src="../pkg/static/js/Buzz-Adapter.js"></script>
+		<script type="text/javascript">
+		console.log('Creating buzz adapter');
+		ba = new Codicle.Buzz("Youtube_spoken_word", "Rayman_2_music_sample");
+		ba.preload(function(){
+			console.log("Preloaded!");
+		});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

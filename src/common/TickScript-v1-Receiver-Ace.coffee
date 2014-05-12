@@ -8,7 +8,6 @@ class AceReceiverV1
 	##
 	# @param ace The Ace editor instance
 	constructor: (@ace) ->
-		console.log @ace
 
 	type: (chr) ->
 		@ace.onTextInput chr

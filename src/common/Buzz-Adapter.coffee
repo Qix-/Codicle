@@ -59,7 +59,7 @@ class BuzzAdapter
 	# Pauses audio
 	pause: () ->
 		return if not @playing
-		@sound.fadeOut 200, () =>
+		@sound.fadeOut 400, () =>
 			@sound.pause()
 		@playing = not @playing
 
@@ -67,8 +67,8 @@ class BuzzAdapter
 	# Resumes audio
 	resume: () ->
 		return if @playing
-		@voxSound.fadeIn 200
-		@bgmSound.fadeTo 30, 200
+		@voxSound.fadeIn 400
+		@bgmSound.fadeTo 30, 400
 		@playing = not @playing
 
 	##

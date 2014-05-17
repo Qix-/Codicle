@@ -1,19 +1,27 @@
 #!/bin/bash
 
 # Force?
-[[ "$1" == "--force" ]] || echo "Will fail on error..."
+if [[ "$1" == "--force" ]]; then
+	forced="forced"
+	echo "WARNING: FORCING ON ERROR!"
+else
+	echo "Will fail on error..."
+fi
+
 function checkExit() {
-	if [[ "$1" == "--force" ]]; then
-		echo -e "\x1B[31;1mERROR; --force specified: continuing...\x1B[0m"
-	else
+	if [ -z ${forced+x} ]; then
 		exit 1
+	else
+		echo -e "\x1B[31;1mERROR; --force specified: continuing...\x1B[0m"
 	fi
 }
 
 # Ignore CR's in scripts
 #	and ignore DOS style paths
-set -o igncr || checkExit
-export CYGWIN="${CYGWIN} nodosfilewarning"
+if [[ `uname` == CYGWIN* ]]; then
+	set -o igncr || checkExit
+	export CYGWIN="${CYGWIN} nodosfilewarning"
+fi
 
 # Dependencies check
 if [[ `which node 2>/dev/null | wc -l` -eq 0 ]]; then
@@ -67,7 +75,11 @@ cd ..
 
 # ez_setup
 cd ./ez_setup
-export PYTHONPATH=`cygpath -w $(pwd)`
+if [[ `uname` == CYGWIN* ]]; then
+	export PYTHONPATH=`cygpath -w $(pwd)`
+else
+	export PYTHONPATH=`pwd`
+fi
 cd ..
 
 # GitPython

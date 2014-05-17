@@ -34,6 +34,3 @@
 [submodule "deps/async"]
 	path = deps/async
 	url = git@github.com:caolan/async.git
-[submodule "recorder"]
-	path = recorder
-	url = git@bitbucket.org:Qix/Codicle-Recorder.git

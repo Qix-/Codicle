@@ -6,7 +6,7 @@
 	url = git@github.com:jaysalvat/buzz.git
 [submodule "deps/doppio"]
 	path = deps/doppio
-	url = git@github.com/plasma-umass/Doppio.git 
+	url = git@github.com:plasma-umass/doppio.git 
 [submodule "deps/asmjs"]
 	path = deps/asmjs
 	url = git@github.com:dherman/asm.js.git

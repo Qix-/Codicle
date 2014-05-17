@@ -35,10 +35,7 @@ class AceReceiverV1
 		@ace.remove 'left'
 
 	pos: (row, col) ->
-		@ace.moveCursorToPosition {
-			row: row
-			col: col
-		}
+		@ace.getSession().selection.moveTo row, col
 
 
 # Export

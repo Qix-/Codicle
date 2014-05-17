@@ -6,7 +6,7 @@
 	url = git@github.com:jaysalvat/buzz.git
 [submodule "deps/doppio"]
 	path = deps/doppio
-	url = git@github.com:Codicle/doppio.git 
+	url = git@github.com/plasma-umass/Doppio.git 
 [submodule "deps/asmjs"]
 	path = deps/asmjs
 	url = git@github.com:dherman/asm.js.git
@@ -34,3 +34,6 @@
 [submodule "deps/async"]
 	path = deps/async
 	url = git@github.com:caolan/async.git
+[submodule "recorder"]
+	path = recorder
+	url = git@bitbucket.org:Qix/Codicle-Recorder.git

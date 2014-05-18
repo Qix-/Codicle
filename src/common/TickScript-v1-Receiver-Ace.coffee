@@ -8,6 +8,25 @@ class AceReceiverV1
     ##
     # @param ace The Ace editor instance
     constructor: (@ace) ->
+        # Apply patches
+        originals = {}
+        hooks = Object.keys @ace._defaultHandlers
+        for hook in hooks
+            hookName = hook
+            originals[hookName] = @ace._defaultHandlers[hookName]
+            @ace._defaultHandlers[hookName] = () =>
+                return false if @ace.getReadOnly()
+                originals[hookName].apply null, [].slice arguments
+                
+        keyboardOriginals = {}
+        hooks = ['handleKeyboard']
+        keyboardHandler = @ace.getKeyboardHandler()
+        for hook in hooks
+            hookName = hook
+            keyboardOriginals[hookName] = keyboardHandler[hookName]
+            keyboardHandler[hookName] = () =>
+                return false if @ace.getReadOnly()
+                keyboardOriginals[hookName].apply keyboardHandler, [].slice arguments
 
     type: (chr) ->
         ro = @ace.getReadOnly()

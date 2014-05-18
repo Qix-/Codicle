@@ -134,6 +134,9 @@ A list of modifiers:
 - `#` - simulates the *enter* key
 - `/` - simulates the *delete* key
 - `<` - simulates the *backspace* character
+- `-` - simulates the *tab* character
+- `%X` - jumps to the end of a line (X=`h` for home, X=`e` for end)
+- `$X` - jumps to the next word (ctrl+click) (X=`l` for left, X=`r` for right)
 - `@R,C;` - jumps cursor to row `R` and col `C` (terminated)
 - `>X` - switches simulated keystrokes to the given frame (X=`p` for presentation frame, X=`e` for editor)
 - `!` - force-pauses the playback

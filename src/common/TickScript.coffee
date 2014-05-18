@@ -8,7 +8,7 @@ class TickScript
 	# @param script The script data to work from
 	# @param editor A handle to the Ace editor
 	# @param cli A handle to a CLI instance
-	constructor: (@script, editor, cli) ->
+	constructor: (@script, @editor, @cli) ->
 		# Validate tickscript
 		@validate()
 
@@ -17,7 +17,7 @@ class TickScript
 
 		# Create receiver
 		@receiver =
-			new Codicle.Receiver editor, cli
+			new Codicle.Receiver @editor, @cli
 
 		# Create commander
 		@commands =
@@ -44,6 +44,16 @@ class TickScript
 		if not @script.ticks or typeof @script.ticks isnt 'string'
 			throw "TickScript ticks isn't a string: #{@script.ticks}"
 
+	#
+	# Getters
+	#
+	getName: () -> @script.name
+	getAuthor: () -> @script.author
+	getVoxUrl: () -> @script.audio
+	getBgmUrl: () -> @script.bgm
+	getChapters: () -> @script.chapters
+	getTicks: () -> @script.ticks
+
 	##
 	# Parses the ticks in this TickScript's ticks string
 	#	This expands times to absolute times, making use
@@ -55,7 +65,12 @@ class TickScript
 		# Check
 		if not @commands
 			throw "Tickscript ticks could not be parsed"
-
+	
+	##
+	# Resets the lesson players
+	reset: () ->
+        @editor.setValue ''
+        @cli.value = ''
 
 # Export
 if module?

@@ -59,6 +59,7 @@
 		window.Codicle = {};
 		</script>
 		<script type="text/javascript" src="../deps/ace/ace-builds/src-noconflict/ace.js"></script>
+		<script type="text/javascript" src="../deps/buzz/dist/buzz.js"></script>
 		<script type="text/javascript" src="../deps/bashjs/lib/Bash-Ansi.js"></script>
 		<script type="text/javascript" src="../pkg/static/js/TickScript-v1-Receiver.js"></script>
 		<script type="text/javascript" src="../pkg/static/js/TickScript-v1-Receiver-Ace.js"></script>
@@ -67,6 +68,8 @@
 		<script type="text/javascript" src="../pkg/static/js/Cmd-Parser.js"></script>
 		<script type="text/javascript" src="../pkg/static/js/Cmd-Interpreter.js"></script>
 		<script type="text/javascript" src="../pkg/static/js/TickScript.js"></script>
+		<script type="text/javascript" src="../pkg/static/js/Buzz-Adapter.js"></script>
+		<script type="text/javascript" src="../pkg/static/js/Player.js"></script>
 		<script type="text/javascript">
 		window.addEventListener("load", function()
 		{
@@ -80,8 +83,8 @@
 				"version": "v1",
 				"name": "Test Tickscript",
 				"author": "Qix",
-				"audio": "null",
-				"bgm": "null",
+				"audio": "youtube",
+				"bgm": "dontgo",
 				"chapters": {},
 				"ticks": ticks
 			};
@@ -95,10 +98,11 @@
 			// Generate object
 			var script = new Codicle.Script(tickScript, editor, cli);
 
-			// Timeout all events
-			for(var i = 0, len = script.commands.events.length; i < len; i++) {
-				setTimeout(script.commands.events[i][1], script.commands.events[i][0] * 1000)
-			}
+			// Create player
+			window.player = new Codicle.Player(script);
+			player.load(function(){
+			    console.log("Ready!");
+			})
 		});
 		</script>
 	</head>

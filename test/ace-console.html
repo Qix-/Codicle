@@ -8,6 +8,7 @@
 			padding: 0;
 			position: relative;
 			border: none;
+			outline: none;
 		}
 
 		html, body {
@@ -102,6 +103,8 @@
 			window.player = new Codicle.Player(script);
 			player.load(function(){
 			    console.log("Ready!");
+			    alert("Ready!\n\nAdjust your speakers! Fair warning!\n\nPress OK to start playing.");
+			    player.resume();
 			})
 		});
 		</script>
@@ -109,7 +112,7 @@
 	<body>
 		<div id="left"></div>
 		<div id="right">
-			<div id="output"></div>
+			<div id="output" onclick="document.querySelector('#input').focus()"></div>
 			<input type="text" id="input" />
 		</div>
 	</body>

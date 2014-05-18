@@ -15,6 +15,13 @@ class Player
         @lastScrub = 0.0
         @interval = null
         
+        # Hold old editor events
+        #   These are kept for the feux-disabling
+        #   and enabling of the keys
+        @editorEvents = {
+            onTextInput: @script.editor.onTextInput   
+        }
+        
     ##
     # Reconstucts the lesson contents
     #   given a time
@@ -49,6 +56,13 @@ class Player
     # Resumes (or starts) playback
     resume: () ->
         return if @interval
+        
+        @script.editor.setReadOnly yes
+        @script.cli.setEnabled no
+        
+        @script.reset()
+        @scrub @buzz.getTime()
+        
         @buzz.resume()
         updateFunc = () =>
             @updateUI()
@@ -58,6 +72,10 @@ class Player
     # Pauses the playback
     pause: () ->
         return if not @interval
+        
+        @script.editor.setReadOnly no
+        @script.cli.setEnabled yes
+        
         @buzz.pause()
         clearInterval @interval
         @interval = null
@@ -85,7 +103,7 @@ class Player
     # @param callback The callback to call when the player is finished
     load: (callback) ->
         @buzz.preload callback
-            
+
 # Export
 if module?
     module.exports = Player
